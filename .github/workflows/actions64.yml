@@ -94,7 +94,7 @@ jobs:
 
       - name: Clone Wine repository
         run: |
-          git clone --branch master --single-branch https://github.com/Twig6943/wine/new/master /tmp/wine64-build
+          git clone --branch master --single-branch https://github.com/Twig6943/wine /tmp/wine64-build
 
       - name: Build Wine64
         run: |
