@@ -1007,9 +1007,7 @@ HRESULT WINAPI SHGetStockIconInfo(SHSTOCKICONID id, UINT flags, SHSTOCKICONINFO 
     if (flags)
         FIXME("flags 0x%x not implemented\n", flags);
 
-    sii->hIcon = NULL;
-    if (flags & SHGSI_ICON)
-        sii->hIcon = LoadIconW(GetModuleHandleW(sii->szPath), MAKEINTRESOURCEW(sii->iIcon));
+    sii->hIcon = LoadIconW(GetModuleHandleW(L"shell32.dll"), MAKEINTRESOURCEW(IDI_SHELL_FILE));
     sii->iSysImageIndex = -1;
 
     TRACE("%3d: returning %s (%d)\n", id, debugstr_w(sii->szPath), sii->iIcon);
